@@ -1,0 +1,16 @@
+.profile-head {
+    transform: translateY(5rem)
+}
+
+.cover {
+    background: url(../images/a2.png);
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.fundo {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,0) 0%, rgba(98,221,245,0.613865614605217) 72%, rgba(98,221,245,1) 100%);
+    background-size: cover;
+    background-repeat: no-repeat
+}
