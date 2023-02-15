@@ -1,0 +1,116 @@
+body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    width: 1300px;
+    height: 550px;
+    box-shadow: 0px 0px 19px 1px #888888;
+    border-radius: 10px;
+    margin-top: 50px;
+    padding:0px;
+}
+
+.sign_up {
+    background-color: #53c8d1;
+    width: 50%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #fafafa;
+}
+
+.sign_up a {
+    text-decoration: none;
+    color: white;
+}
+
+.sign_up button {
+    width: 50%;
+    height: 50px;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    background-color: #53c8d1;
+    border: 1px solid #fff;
+}
+
+.sign_up h1 {
+    display: inline;
+    font-size: 30px;
+    line-height: 10px;
+}
+
+.sign_in {
+    width: 50%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sign_in h1 {
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+}
+
+.email_senha {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+.sign_in input {
+    width: 88%;
+    height: 50px;
+    border-radius: 4px;
+    border-style: none;
+    padding-left: 20px;
+    font-size: 18px;
+    background-color: #ededef;
+
+}
+
+input[type="submit"] {
+    width: 50%;
+    height: 50px;
+    color: #fafafa;
+    background-color: #53c8d1;
+    border-style: none;
+    border-radius: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0px;
+    cursor:pointer;
+}
+
+button {
+    cursor: pointer;
+}

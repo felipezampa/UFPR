@@ -1,0 +1,60 @@
+.table.table-ellipsis tbody td {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.table.table-ellipsis tbody td:before {
+    /*
+     o conteúdo está no title para que quando o campo estiver com ellipsis (cortado por ... por que é muito longo)
+     seja possível visualizar o conteúdo inteiro no hover.
+     isso aqui faz o conteúdo ser preenchido com o mesmo valor que está no title
+    */
+    content: attr(title);
+}
+
+.modal-excluir-funcionario {
+   background-color:white;
+    margin:auto;
+    position: relative;
+    top:20vh;
+    width: 550px;
+    height:200px;
+    padding:24px;
+    border-radius: 4px;
+
+}
+
+
+.js-remover-usuario-modal-container{
+    width: 90%;
+    z-index: 1;
+    position: fixed;
+    height: 100%;
+    background-color: rgba(10,23,55,0.5);
+    display:none;
+}
+.btn_cancelar{
+    background: #dc3545;
+    color:white;
+}
+
+.js-confirm-button{
+    background: #198754;
+    color:white;
+    margin-left: 2px; 
+}
+.js-confirm-button:hover{
+    background: #556B2F;
+    color:white;
+
+}
+.btn_cancelar:hover{
+    background: #8B0000;
+    color:white;
+}
+
+.js-usuario-nome{
+    font-weight: bold;
+}

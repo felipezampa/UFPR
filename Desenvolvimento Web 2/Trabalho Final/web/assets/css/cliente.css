@@ -1,0 +1,17 @@
+.form-pesquisa{
+    margin-bottom: 10px;
+}
+.form-pesquisa .text{
+    width: 200px;
+    height: 25;
+    border-radius: 2px;
+    border:1px solid gray ;
+}
+.form-pesquisa .button{
+    background-color: #0d6efd;
+    border-radius: 4px;
+    border-style:none ;
+    width: 100px;
+    height: 25px;
+    color:white;
+}
