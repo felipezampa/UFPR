@@ -1,0 +1,84 @@
+<div *ngIf="usuarioLogado" class="bt-sidebar">
+    <ul>
+        <li class="bt-hover">
+            <a class="logo disabled">
+                <img src="../assets/img/logo-3.png" alt="BanTADS">
+            </a>
+        </li>
+        <hr class="my-1">
+        <div [ngSwitch]="usuarioLogado.perfil">
+            <div *ngSwitchCase="'admin'">
+                <li class="bt-hover my-3">
+                    <a href="/admin" class="bt-anchor">
+                        <i class="fa-solid fa-home bt-icon"></i>
+                        <span class="bt-nav-item">Home</span>
+                    </a>
+                </li>
+                <li class="bt-hover my-3">
+                    <a href="/admin/listar-cliente" class="bt-anchor">
+                        <i class="fa-solid fa-users bt-icon"></i>
+                        <span class="bt-nav-item">Clientes</span>
+                    </a>
+                </li>
+                <li class="bt-hover my-3">
+                    <a href="/gerentes/listar" class="bt-anchor">
+                        <i class="fa-solid fa-address-card bt-icon"></i>
+                        <span class="bt-nav-item">Gerentes</span>
+                    </a>
+                </li>
+            </div>
+            <div *ngSwitchCase="'gerente'">
+                <li class="bt-hover my-3">
+                    <a href="/gerente/consulta" class="bt-anchor">
+                        <i class="fa-solid fa-user-tie bt-icon"></i>
+                        <span class="bt-nav-item">Consultar Cliente</span>
+                    </a>
+                </li>
+                <li class="bt-hover my-3">
+                    <a href="/gerente/melhores-clientes" class="bt-anchor">
+                        <i class="fa-solid fa-people-group bt-icon"></i>
+                        <span class="bt-nav-item">Melhores Clientes</span>
+                    </a>
+                </li>
+                <li class="bt-hover my-3">
+                    <a href="/gerente/listar-clientes" class="bt-anchor">
+                        <i class="fa-solid fa-list bt-icon"></i>
+                        <span class="bt-nav-item">Lista de Clientes</span>
+                    </a>
+                </li>
+            </div>
+            <div *ngSwitchCase="'user'">
+                <li class="bt-hover my-3">
+                    <a href="/cliente/deposito" class="bt-anchor">
+                        <i class="fa-solid fa-hand-holding-dollar bt-icon"></i>
+                        <span class="bt-nav-item">Depositar</span>
+                    </a>
+                </li>
+                <li class="bt-hover my-3">
+                    <a href="/cliente/saque" class="bt-anchor">
+                        <i class="fa-solid fa-sack-dollar bt-icon"></i>
+                        <span class="bt-nav-item">Sacar</span>
+                    </a>
+                </li>
+                <li class="bt-hover my-3">
+                    <a href="/cliente/transferencia" class="bt-anchor">
+                        <i class="fa-solid fa-money-bill-transfer bt-icon"></i>
+                        <span class="bt-nav-item">Transferir</span>
+                    </a>
+                </li>
+                <li class="bt-hover my-3">
+                    <a href="/cliente/extrato" class="bt-anchor">
+                        <i class="fa-solid fa-file-invoice-dollar bt-icon"></i>
+                        <span class="bt-nav-item">Extrato</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+        <li class="bt-logout mb-4">
+            <a type="submit" (click)="logout()">
+                <i class="fa-solid fa-right-from-bracket bt-icon"></i>
+                <span class="bt-nav-item">Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>

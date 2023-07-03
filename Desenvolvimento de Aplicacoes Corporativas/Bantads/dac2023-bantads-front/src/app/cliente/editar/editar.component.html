@@ -1,0 +1,225 @@
+<div class="bt-container my-2 mb-6">
+  <div class="row my-4">
+    <div class="card shadow-lg">
+      <div class="card-header p-3">
+        <div>
+          <h2 class="text-center">EDITAR DADOS</h2>
+        </div>
+      </div>
+      <mat-card class="mt-4 p-4">
+        <form
+          #userSignup="ngForm"
+          class="row d-flex flex-column justify-content-center align-items-center"
+        >
+          <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Nome</mat-label>
+            <input
+              matInput
+              placeholder="Insira seu nome"
+              required
+              minlength="4"
+              color="primary"
+              name="nome"
+              [(ngModel)]="usuario.nome"
+              #name="ngModel"
+            />
+          </mat-form-field>
+          <div
+            class="alert alert-danger col-6 mx-3"
+            *ngIf="name.errors && (name.dirty || name.touched)"
+          >
+            <div [hidden]="!name.errors">Digite seu nome.</div>
+          </div>
+
+
+
+          <mat-form-field appearance="fill" class="col-6">
+            <mat-label>E-mail</mat-label>
+            <input
+              matInput
+              placeholder="Insira seu email"
+              required
+              minlength="4"
+              color="primary"
+              name="email"
+              [(ngModel)]="usuario.email"
+              #email="ngModel"
+            />
+          </mat-form-field>
+          <div
+            class="alert alert-danger col-6 mx-3"
+            *ngIf="email.errors && (email.dirty || email.touched)"
+          >
+            <div [hidden]="!email.errors">Digite um email válido.</div>
+          </div>
+
+
+          <mat-form-field appearance="fill" class="col-6">
+            <mat-label>CPF</mat-label>
+            <input
+              matInput
+              placeholder="Insira seu CPF"
+              required
+
+              minlength="11"
+              mask="000.000.000-00"
+              color="primary"
+              name="cpf"
+              [(ngModel)]="usuario.cpf"
+              #cpf="ngModel"
+            />
+          </mat-form-field>
+          <div
+            class="alert alert-danger col-6 mx-3"
+            *ngIf="cpf.errors && (cpf.dirty || cpf.touched)"
+          >
+            <div [hidden]="!cpf.errors">Digite seu nome.</div>
+          </div>
+
+          <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Telefone</mat-label>
+            <input
+              matInput
+              placeholder="Insira seu telefone"
+              required
+              minlength="11"
+              color="primary"
+              mask="(00) 0 0000-0000"
+              name="telefone"
+              [(ngModel)]="usuario.telefone"
+              #telefone="ngModel"
+            />
+          </mat-form-field>
+          <div
+            class="alert alert-danger col-6 mx-3"
+            *ngIf="telefone.errors && (telefone.dirty || telefone.touched)"
+          >
+            <div [hidden]="!telefone.errors">Digite seu telefone.</div>
+          </div>
+          <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Endereço</mat-label>
+            <input
+              matInput
+              placeholder="Insira seu endereço"
+              required
+              minlength="1"
+              color="primary"
+              name="endereco"
+              [(ngModel)]="usuario.endereco"
+              #endereco="ngModel"
+            />
+          </mat-form-field>
+          <div
+            class="alert alert-danger col-6 mx-3"
+            *ngIf="endereco.errors && (endereco.dirty || endereco.touched)"
+          >
+            <div [hidden]="!endereco.errors">Digite seu Endereço.</div>
+          </div>
+
+          <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Cidade</mat-label>
+            <input
+              matInput
+              placeholder="Insira seu cidade"
+              required
+              minlength="1"
+              color="primary"
+              name="cidade"
+              [(ngModel)]="usuario.cidade"
+              #cidade="ngModel"
+            />
+          </mat-form-field>
+          <div
+            class="alert alert-danger col-6 mx-3"
+            *ngIf="cidade.errors && (cidade.dirty || cidade.touched)"
+          >
+            <div [hidden]="!cidade.errors">Digite seu Cidade.</div>
+          </div>
+
+          <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Estado</mat-label>
+            <input
+              matInput
+              placeholder="Insira seu estado"
+              required
+              minlength="1"
+              color="primary"
+              name="estado"
+              [(ngModel)]="usuario.estado"
+              #estado="ngModel"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </mat-form-field>
+          <div
+            class="alert alert-danger col-6 mx-3"
+            *ngIf="estado.errors && (estado.dirty || estado.touched)"
+          >
+            <div [hidden]="!estado.errors">Digite seu Estado.</div>
+          </div>
+
+          <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Bairro</mat-label>
+            <input
+              matInput
+              placeholder="Insira seu bairro"
+              required
+              minlength="1"
+              color="primary"
+              name="bairro"
+              [(ngModel)]="usuario.bairro"
+              #bairro="ngModel"
+            />
+          </mat-form-field>
+          <div
+            class="alert alert-danger col-6 mx-3"
+            *ngIf="bairro.errors && (bairro.dirty || bairro.touched)"
+          >
+            <div [hidden]="!bairro.errors">Digite seu bairro.</div>
+          </div>
+
+          <mat-form-field appearance="fill" class="col-6">
+            <mat-label>Salário mensal</mat-label>
+            <input
+              matInput
+              placeholder="Insira seu salário mensal"
+              required
+              currencyMask
+              [options]="{
+                prefix: 'R$ ',
+                thousands: '',
+                decimal: '.',
+                align: 'left'
+              }"
+              minlength="1"
+              color="primary"
+              name="salario"
+              [(ngModel)]="usuario.salario"
+              #salario="ngModel"
+            />
+          </mat-form-field>
+          <div
+            class="alert alert-danger col-6 mx-3"
+            *ngIf="salario.errors && (salario.dirty || salario.touched)"
+          >
+            <div [hidden]="!salario.errors">Digite o salário.</div>
+          </div>
+
+          <button
+            mat-raised-button
+            color="primary"
+            class="col-6 mx-3"
+            (click)="editarDados()"
+            [disabled]="!userSignup.form.valid"
+          >
+            Editar
+          </button>
+        </form>
+      </mat-card>
+      <div>
+        <button mat-button class="mt-2 button-light" onclick="history.back()">
+          Voltar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

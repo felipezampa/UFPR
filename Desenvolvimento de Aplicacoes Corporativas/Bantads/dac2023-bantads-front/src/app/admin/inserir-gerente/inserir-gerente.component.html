@@ -1,0 +1,70 @@
+<div class="modal-header modal-lg d-flex justify-content-center">
+    <h5 id="modalLabel">CADASTRAR GERENTE</h5>
+</div>
+<div class="modal-body text-center">
+    <form #formGerente="ngForm" class="px-5">
+        <div class="row mt-2">
+            <div class="col-3">
+                <label for="nome" class="bt-label">Nome:</label>
+            </div>
+            <div class="col">
+                <input type="text" maxlength="50" minlength="2" [(ngModel)]="gerente.nome" name="nome" #nome="ngModel"
+                    id="nome" class="bt-input" required placeholder="Nome do Gerente">
+                <div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="alert alert-danger col mx-3">
+                    <div [hidden]="!nome.errors['required']"> Digite o nome do gerente. </div>
+                    <div [hidden]="!nome.errors['minlength']"> O nome deve conter ao menos 2 caracteres. </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <label for="email" class="bt-label">Email:</label>
+            </div>
+            <div class="col">
+                <div class="col">
+                    <input type="email" maxlength="50" [(ngModel)]="gerente.email" name="email" #email="ngModel"
+                        id="email" class="bt-input" required placeholder="Email do Gerente">
+                    <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger col mx-3">
+                        <div [hidden]="!email.errors['required']"> Digite o email do gerente. </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <label for="cpf" class="bt-label">CPF:</label>
+            </div>
+            <div class="col">
+                <input type="text" maxlength="14" minlength="11" [(ngModel)]="gerente.cpf" name="cpf" #cpf="ngModel" class="bt-input"
+                    mask="000.000.000-00" placeholder="000.000.000-00" required>
+                <div *ngIf="cpf.errors && (cpf.dirty || cpf.touched)" class="alert alert-danger col mx-3">
+                    <div [hidden]="!cpf.errors['required']"> O número do CPF é obrigatório. </div>
+                    <div [hidden]="!cpf.errors['minlength']"> Digite um formato válido de CPF. </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <label for="telefone" class="bt-label">Telefone</label>
+            </div>
+            <div class="col">
+                <input type="text" required ngModel class="bt-input" [(ngModel)]="gerente.phone" name="telefone"
+                    minlength="10" #telefone="ngModel" mask="(00) 0 0000-0000||(00) 0000-0000"
+                    placeholder="(00) 0 0000-0000">
+                <div *ngIf="telefone.errors && (telefone.dirty || telefone.touched)"
+                    class="alert alert-danger col mx-3">
+                    <div [hidden]="!telefone.errors['required']"> Digite o telefone do gerente. </div>
+                    <div [hidden]="!telefone.errors['minlength']"> Digite um formato válido de telefone. </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer justify-content-center align-items-center">
+    <button type="submit" class="btn btn-primary mx-2" (click)="inserir()"
+        [disabled]="!formGerente.valid">Salvar</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Fechar</button>
+</div>

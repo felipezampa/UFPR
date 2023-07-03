@@ -1,0 +1,232 @@
+<div class="bt-container my-2">
+  <div class="row my-4">
+    <div class="card shadow-lg">
+      <div class="card-header p-3">
+        <div>
+          <h2 class="text-center">ÁREA DE EXTRATOS</h2>
+        </div>
+      </div>
+      <mat-card class="mt-4 p-4">
+        <div class="date-selection">
+          <form [formGroup]="range" novalidate>
+            <mat-form-field class="w-100 fs-16" appearance="outline">
+              <mat-label>Selecione o período</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input
+                  matStartDate
+                  formControlName="start"
+                  placeholder="Início"
+                  [(ngModel)]="dataInicial"
+                />
+                <input
+                  matEndDate
+                  formControlName="end"
+                  placeholder="Fim"
+                  [(ngModel)]="dataFinal"
+                />
+              </mat-date-range-input>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+
+              <mat-error>
+                *ngIf="range.controls['start'].hasError('matStartDateInvalid')"
+                >Início inválido</mat-error
+              >
+              <mat-error
+                *ngIf="range.controls['end'].hasError('matEndDateInvalid')"
+                >Fim inválido</mat-error
+              >
+            </mat-form-field>
+            <button
+              mat-button
+              class="btn btn-success"
+              (click)="getTransactions()"
+            >
+              Consultar extrato
+            </button>
+          </form>
+
+          <div *ngIf="balancoCompleto">
+            <table
+              mat-table
+              #table
+              [dataSource]="balancoCompleto"
+              multiTemplateDataRows
+            >
+              <ng-container matColumnDef="data">
+                <th mat-header-cell *matHeaderCellDef>Dia</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.data }}
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="balanco">
+                <th mat-header-cell *matHeaderCellDef>Balanço do dia</th>
+                <td mat-cell *matCellDef="let element">
+                  R${{ element.balanco.toFixed(2) }}
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="expandedDetail">
+                <td
+                  mat-cell
+                  *matCellDef="let element"
+                  [attr.colspan]="displayedColumns.length"
+                >
+                  <div
+                    class="example-element-detail"
+                    style="width: 100%"
+                    [@detailExpand]="
+                      checkExpanded(element) ? 'expanded' : 'collapsed'
+                    "
+                  >
+                    <div
+                      class="example-element-description"
+                      style="width: 100%"
+                    >
+                      <table
+                        mat-table
+                        #table
+                        class="width-max"
+                        [dataSource]="element.items"
+                        multiTemplateDataRows
+                        *ngIf="idContaAtual"
+                      >
+                        <ng-container matColumnDef="dataHoraCriacao">
+                          <th mat-header-cell *matHeaderCellDef>Horário</th>
+                          <td
+                            mat-cell
+                            *matCellDef="let element"
+                            [ngClass]="{
+                              'transferencia-recebe-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem != idContaAtual,
+                              'deposito-css': element.tipoMovimentacao === 1,
+                              'saque-css': element.tipoMovimentacao === 2,
+                              'transferencia-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem === idContaAtual
+                            }"
+                          >
+                            {{ element.dataHoraCriacao }}
+                          </td>
+                        </ng-container>
+                        <ng-container matColumnDef="valor">
+                          <th mat-header-cell *matHeaderCellDef>Valor</th>
+                          <td
+                            mat-cell
+                            *matCellDef="let element"
+                            [ngClass]="{
+                              'transferencia-recebe-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem != idContaAtual,
+                              'deposito-css': element.tipoMovimentacao === 1,
+                              'saque-css': element.tipoMovimentacao === 2,
+                              'transferencia-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem === idContaAtual
+                            }"
+                          >
+                            R${{
+                              element.valor ? element.valor.toFixed(2) : ""
+                            }}
+                          </td>
+                        </ng-container>
+                        <ng-container matColumnDef="tipo">
+                          <th mat-header-cell *matHeaderCellDef>Tipo</th>
+                          <td
+                            mat-cell
+                            *matCellDef="let element"
+                            [ngClass]="{
+                              'transferencia-recebe-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem != idContaAtual,
+                              'deposito-css': element.tipoMovimentacao === 1,
+                              'saque-css': element.tipoMovimentacao === 2,
+                              'transferencia-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem === idContaAtual
+                            }"
+                          >
+                            {{ getTransactionType(element.tipoMovimentacao) }}
+                          </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="origem">
+                          <th mat-header-cell *matHeaderCellDef>Origem</th>
+                          <td
+                            mat-cell
+                            *matCellDef="let element"
+                            [ngClass]="{
+                              'transferencia-recebe-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem != idContaAtual,
+                              'deposito-css': element.tipoMovimentacao === 1,
+                              'saque-css': element.tipoMovimentacao === 2,
+                              'transferencia-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem === idContaAtual
+                            }"
+                          >
+                            {{ element.contaOrigem }}
+                          </td>
+                        </ng-container>
+                        <ng-container matColumnDef="destino">
+                          <th mat-header-cell *matHeaderCellDef>Destino</th>
+                          <td
+                            mat-cell
+                            *matCellDef="let element"
+                            [ngClass]="{
+                              'transferencia-recebe-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem != idContaAtual,
+                              'deposito-css': element.tipoMovimentacao === 1,
+                              'saque-css': element.tipoMovimentacao === 2,
+                              'transferencia-css':
+                                element.tipoMovimentacao === 3 &&
+                                element.contaOrigem === idContaAtual
+                            }"
+                          >
+                            {{ element.contaDestino }}
+                          </td>
+                        </ng-container>
+
+                        <tr
+                          mat-header-row
+                          *matHeaderRowDef="displayedColumns2"
+                        ></tr>
+                        <tr
+                          mat-row
+                          *matRowDef="let row; columns: displayedColumns2"
+                        ></tr>
+                      </table>
+                    </div>
+                  </div>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr
+                mat-row
+                *matRowDef="let element; columns: displayedColumns"
+                class="example-element-row"
+                [class.example-expanded-row]="checkExpanded(element)"
+                (click)="pushPopElement(element)"
+              ></tr>
+              <tr
+                mat-row
+                *matRowDef="let row; columns: ['expandedDetail']"
+                class="example-detail-row"
+              ></tr>
+            </table>
+          </div>
+
+          <button mat-button class="mt-2 button-light" onclick="history.back()">
+            Voltar
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

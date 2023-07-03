@@ -1,0 +1,854 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Admin",
+      "login": "admin@bantads.com",
+      "senha": "admin",
+      "perfil": "ADMIN"
+    },
+    {
+      "id": 2,
+      "nome": "Gerente",
+      "login": "gerente@bantads.com",
+      "senha": "gerente",
+      "perfil": "GERENTE"
+    },
+    {
+      "id": 3,
+      "nome": "Cliente",
+      "login": "cliente@bantads.com",
+      "senha": "cliente",
+      "perfil": "USER"
+    }
+  ],
+  "conta": [
+    {
+      "id": 1,
+      "usuario": {
+        "id": 1486989042621,
+        "ultimoNome": "Acordeon",
+        "email": "nando@mail.com",
+        "password": "123123",
+        "nome": "Fernandinho",
+        "cpf": "09691654989",
+        "telefone": "(41) 996073903",
+        "dataAniversario": "12/05/2000",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "Brasil",
+        "endereco": "Rua das Jasmins, 1309",
+        "salario": "3000"
+      },
+      "numeroConta": 1486919042637,
+      "limite": 0,
+      "estaAtivo": false,
+      "saldo": 1000,
+      "status": 1,
+      "reponseDate": "2022-12-20T23:24:49.110Z",
+      "dataResposta": "2023-04-24T12:22:14.840Z",
+      "motivoReprovacao": "ALOALOMARCAINO"
+    },
+    {
+      "id": 2,
+      "usuario": {
+        "id": 1486989042622,
+        "ultimoNome": "Acordeon",
+        "email": "fernando@mail.com",
+        "password": "123123",
+        "nome": "Fernando",
+        "cpf": "09691654989",
+        "telefone": "(41) 996073903",
+        "dataAniversario": "12/05/2000",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "Brasil",
+        "endereco": "Rua das Jasmins, 1309",
+        "salario": "3000"
+      },
+      "numeroConta": 1486919042637,
+      "limite": 5000,
+      "estaAtivo": false,
+      "saldo": 1000,
+      "status": 2
+    },
+    {
+      "id": 3,
+      "usuario": {
+        "id": 1486989042623,
+        "email": "jonas@mail.com",
+        "senha": "",
+        "nome": "Jonas",
+        "ultimoNome": "do Acordeon",
+        "cpf": "2023-04-02T03:00:00.000Z",
+        "telefone": "2000-12-05T02:00:00.000Z",
+        "dataAniversario": "2000-12-05T02:00:00.000Z",
+        "cidade": "Paraná",
+        "estado": 1000,
+        "pais": "PR",
+        "endereco": "Brasil",
+        "salario": 9000,
+        "ativo": true,
+        "estaAprovado": true
+      },
+      "numeroConta": 1486919042638,
+      "limite": 7500,
+      "estaAtivo": true,
+      "saldo": 1000,
+      "status": 2,
+      "reponseDate": "2022-12-18T19:37:37.457Z"
+    },
+    {
+      "id": 4,
+      "usuario": {
+        "id": 1486989042624,
+        "ultimoNome": "Acordeon",
+        "email": "carlos@mail.com",
+        "password": "123123",
+        "nome": "Carlos",
+        "cpf": "22222222222",
+        "telefone": "(41) 996073903",
+        "dataAniversario": "12/05/2000",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "Brasil",
+        "endereco": "Rua das Jasmins, 1309",
+        "salario": "3000"
+      },
+      "numeroConta": 1486919042632,
+      "limite": 0,
+      "estaAtivo": true,
+      "saldo": 1000,
+      "status": 2,
+      "reponseDate": "2022-12-18T20:07:42.826Z"
+    },
+    {
+      "id": 1671576661650,
+      "usuario": {
+        "email": "dwer@ldld.com",
+        "ultimoNome": "Acordeon",
+        "password": "555555",
+        "nome": "Jeferson",
+        "cpf": "43158781972",
+        "telefone": "(41) 996073903",
+        "dataAniversario": "12/05/2000",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "Brasil",
+        "endereco": "Rua das Jasmins, 1309",
+        "salario": "55555"
+      },
+      "numeroConta": 1671576661650,
+      "limite": 0,
+      "estaAtivo": true,
+      "saldo": 150,
+      "status": 2,
+      "dataResposta": "2023-04-13T10:56:36.690Z"
+    },
+    {
+      "id": 1671576844430,
+      "usuario": {
+        "email": "sdf@ls.com",
+        "ultimoNome": "Acordeon",
+        "password": "555555",
+        "nome": "Roselia",
+        "cpf": "72100397915",
+        "telefone": "(41) 996073903",
+        "dataAniversario": "12/05/2000",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "Brasil",
+        "endereco": "Rua das Jasmins, 1309",
+        "salario": "5555"
+      },
+      "numeroConta": 1671576844430,
+      "limite": 0,
+      "estaAtivo": false,
+      "status": 1,
+      "saldo": 2000,
+      "dataResposta": "2023-04-13T10:56:43.549Z"
+    },
+    {
+      "id": 1671576984846,
+      "usuario": {
+        "email": "marielly@hotmail.com",
+        "ultimoNome": "Acordeon",
+        "password": "mari@2002",
+        "nome": "marielly tres",
+        "cpf": "09846108982",
+        "telefone": "(41) 996073903",
+        "dataAniversario": "12/05/2000",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "Brasil",
+        "endereco": "Rua das Jasmins, 1309",
+        "salario": "50000"
+      },
+      "numeroConta": 1671576984846,
+      "limite": 0,
+      "estaAtivo": true,
+      "saldo": 1000,
+      "status": 2,
+      "reponseDate": "2022-12-20T22:56:56.254Z"
+    },
+    {
+      "id": 1671578656785,
+      "usuario": {
+        "email": "usuario@bantads.com",
+        "ultimoNome": "Acordeon",
+        "password": "usuario",
+        "nome": "Razer dois",
+        "cpf": "72100397915",
+        "telefone": "(41) 996073903",
+        "dataAniversario": "12/05/2000",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "Brasil",
+        "endereco": "Rua das Jasmins, 1309",
+        "salario": "7777"
+      },
+      "numeroConta": 1671578656785,
+      "limite": 1000,
+      "estaAtivo": true,
+      "saldo": 1000,
+      "status": 2,
+      "reponseDate": "2022-12-20T23:24:37.107Z"
+    },
+    {
+      "id": 7585,
+      "usuario": {
+        "email": "karine.antoniacomi@gmail.com",
+        "nome": "Karine Antoniacomi dos Santos",
+        "cpf": "11111111111",
+        "telefone": "41987657926",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "pais": "Brasil",
+        "endereco": "Rua João Pereira Trindade",
+        "salario": 111.11,
+        "cep": "81490040"
+      },
+      "numeroConta": 5748,
+      "dataCriacao": "2023-04-27T00:53:32.813Z",
+      "dataResposta": "2023-04-27T01:15:21.166Z",
+      "limite": 111.11,
+      "estaAtivo": false,
+      "status": 1,
+      "motivoReprovacao": "deu ruim"
+    },
+    {
+      "id": 9684,
+      "usuario": {
+        "email": "lusquinha@gmail.com",
+        "nome": "Luska",
+        "cpf": "11111111111",
+        "telefone": "41987657926",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "pais": "Brasil",
+        "endereco": "Rua João Pereira Trindade",
+        "salario": 11111.11,
+        "cep": "81490040",
+        "estaAprovado": true
+      },
+      "numeroConta": 1597,
+      "dataCriacao": "2023-04-27T00:56:20.949Z",
+      "dataResposta": "2023-04-27T01:15:15.733Z",
+      "limite": 11111.11,
+      "estaAtivo": true,
+      "status": 2,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 9420,
+      "usuario": {
+        "email": "chronos@gmail.com",
+        "nome": "Chronos",
+        "cpf": "11111111111",
+        "telefone": "41987657926",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "pais": "Brasil",
+        "endereco": "Rua João Pereira Trindade",
+        "salario": 31231.23,
+        "cep": "81490040",
+        "estaAprovado": true
+      },
+      "numeroConta": 1538,
+      "dataCriacao": "2023-04-27T01:00:25.367Z",
+      "dataResposta": "2023-04-27T01:15:09.382Z",
+      "limite": 31231.23,
+      "estaAtivo": true,
+      "status": 2,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 3284,
+      "usuario": {
+        "email": "original@gmail.com",
+        "nome": "Original",
+        "cpf": "33333333333",
+        "telefone": "41987657926",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "pais": "Brasil",
+        "endereco": "Rua João Pereira Trindade",
+        "salario": 11111.11,
+        "cep": "81490040",
+        "estaAprovado": true
+      },
+      "numeroConta": 4012,
+      "dataCriacao": "2023-04-27T01:01:40.826Z",
+      "dataResposta": "2023-04-27T01:14:01.535Z",
+      "limite": 11111.11,
+      "estaAtivo": true,
+      "status": 2,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 112,
+      "usuario": {
+        "email": "jao@gmail.com",
+        "nome": "João de Barro",
+        "cpf": "11111111112",
+        "telefone": "41987657000",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "pais": "Brasil",
+        "endereco": "Rua das Árvores",
+        "salario": 5000,
+        "cep": "81490999",
+        "estaAprovado": false
+      },
+      "numeroConta": 7685,
+      "dataCriacao": "2023-04-27T01:17:29.632Z",
+      "dataResposta": "2023-04-27T23:56:15.045Z",
+      "limite": 5000,
+      "estaAtivo": false,
+      "status": 1,
+      "motivoReprovacao": "a"
+    },
+    {
+      "id": 6552,
+      "usuario": {
+        "email": "jonathan@gmail.com",
+        "nome": "Jonathan Barrozo",
+        "cpf": "22222222222",
+        "telefone": "41987657926",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "pais": "Brasil",
+        "endereco": "Rua dos Postes",
+        "salario": 222.22,
+        "cep": "81490040",
+        "estaAprovado": false
+      },
+      "numeroConta": 6618,
+      "dataCriacao": "2023-04-27T01:22:19.429Z",
+      "dataResposta": "2023-04-27T01:22:19.429Z",
+      "limite": 222.22,
+      "estaAtivo": false,
+      "status": 1,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 8052,
+      "usuario": {
+        "email": "karine.antoniacomi@gmail.com",
+        "nome": "Kleberson Pedroso",
+        "cpf": "11111111111",
+        "telefone": "41987657926",
+        "cidade": "Curitiba",
+        "estado": "Paraná",
+        "pais": "Brasil",
+        "endereco": "Rua das Montanhas",
+        "salario": 333.33,
+        "cep": "81490040",
+        "estaAprovado": false
+      },
+      "numeroConta": 5076,
+      "dataCriacao": "2023-04-27T01:24:10.559Z",
+      "dataResposta": "2023-04-27T01:24:10.559Z",
+      "limite": 333.33,
+      "estaAtivo": false,
+      "status": 1,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 5416,
+      "usuario": {
+        "email": "ovo@email.com",
+        "nome": "Birdison jones",
+        "cpf": "33333333333",
+        "telefone": "23232219291",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "Brasil ",
+        "endereco": "Rua das galinhas",
+        "salario": 44444.44,
+        "cep": "11111212",
+        "estaAprovado": false
+      },
+      "numeroConta": 8244,
+      "dataCriacao": "2023-04-27T01:25:26.517Z",
+      "dataResposta": "2023-04-27T23:56:28.186Z",
+      "limite": 44444.44,
+      "estaAtivo": false,
+      "status": 1,
+      "motivoReprovacao": "rert"
+    },
+    {
+      "id": 1788,
+      "usuario": {
+        "email": "razer@mail.com",
+        "nome": "Profe Razer",
+        "cpf": "55555555555",
+        "telefone": "88888888888",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "BR",
+        "endereco": "Rua das Jasmins, 1309",
+        "salario": 800000,
+        "cep": "89580000",
+        "estaAprovado": true
+      },
+      "numeroConta": 3509,
+      "dataCriacao": "2023-04-28T00:04:40.705Z",
+      "dataResposta": "2023-04-28T00:28:49.486Z",
+      "limite": 800000,
+      "estaAtivo": true,
+      "status": 2,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 5936,
+      "usuario": {
+        "email": "mar@mail.com",
+        "nome": "MArielly Frozza",
+        "cpf": "99999999999",
+        "telefone": "99999999999",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "BR",
+        "endereco": "Rua das flores",
+        "salario": 9000,
+        "cep": "80060000",
+        "estaAprovado": false
+      },
+      "numeroConta": 3809,
+      "dataCriacao": "2023-04-28T00:14:53.993Z",
+      "dataResposta": "2023-04-28T00:14:53.993Z",
+      "limite": 9000,
+      "estaAtivo": false,
+      "status": 0,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 679,
+      "usuario": {
+        "email": "mariana@mari.com",
+        "nome": "Mariana",
+        "cpf": "00000000000",
+        "telefone": "99999999999",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "BR",
+        "endereco": "Ruas das Andorinhas",
+        "salario": 9000,
+        "cep": "99999999",
+        "estaAprovado": false
+      },
+      "numeroConta": 955,
+      "dataCriacao": "2023-04-28T00:16:11.235Z",
+      "dataResposta": "2023-04-28T00:16:11.235Z",
+      "limite": 9000,
+      "estaAtivo": false,
+      "status": 0,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 800,
+      "usuario": {
+        "email": "ana@gmail.com",
+        "nome": "Ana Maria",
+        "cpf": "99999999999",
+        "telefone": "99999999999",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "BR",
+        "endereco": "Rua dos Patos",
+        "salario": 1000,
+        "cep": "99999999",
+        "estaAprovado": false
+      },
+      "numeroConta": 6260,
+      "dataCriacao": "2023-04-28T00:17:53.205Z",
+      "dataResposta": "2023-04-28T00:17:53.205Z",
+      "limite": 1000,
+      "estaAtivo": false,
+      "status": 0,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 6604,
+      "usuario": {
+        "email": "paula@mail.com",
+        "nome": "Ana Paula",
+        "cpf": "00000000000",
+        "telefone": "00000000000",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "BR",
+        "endereco": "Rua zero",
+        "salario": 1900,
+        "cep": "00000000",
+        "estaAprovado": false
+      },
+      "numeroConta": 3303,
+      "dataCriacao": "2023-04-28T00:19:45.027Z",
+      "dataResposta": "2023-04-28T00:19:45.027Z",
+      "limite": 1900,
+      "estaAtivo": false,
+      "status": 0,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 665,
+      "usuario": {
+        "email": "mu@mu.com",
+        "nome": "Murilo",
+        "cpf": "11111111111",
+        "telefone": "44444444444",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "BR",
+        "endereco": "Rua Vinte de Maio",
+        "salario": 4000,
+        "cep": "80060000",
+        "estaAprovado": false
+      },
+      "numeroConta": 6725,
+      "dataCriacao": "2023-04-28T00:20:45.687Z",
+      "dataResposta": "2023-04-28T00:20:45.687Z",
+      "limite": 4000,
+      "estaAtivo": false,
+      "status": 0,
+      "motivoReprovacao": ""
+    },
+    {
+      "id": 9768,
+      "usuario": {
+        "email": "mariana@gmail.com",
+        "nome": "Maeiana Paes",
+        "cpf": "00000000000",
+        "telefone": "00000000000",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "pais": "BR",
+        "endereco": "Rua XV de novembro",
+        "salario": 6000,
+        "cep": "80060000",
+        "estaAprovado": false
+      },
+      "numeroConta": 2093,
+      "dataCriacao": "2023-04-28T00:26:40.744Z",
+      "dataResposta": "2023-04-28T00:28:57.034Z",
+      "limite": 6000,
+      "estaAtivo": false,
+      "status": 1,
+      "motivoReprovacao": "Motivação apresentação prototipo"
+    }
+  ],
+  "gerentes": [
+    {
+      "id": 2,
+      "nome": "Marielly",
+      "email": "mari@mari.com",
+      "cpf": "11234567891",
+      "telefone": "41996739300",
+      "contas": [
+        {
+          "id": 1671578656785,
+          "usuario": {
+            "email": "usuario@bantads.com",
+            "ultimoNome": "Acordeon",
+            "password": "usuario",
+            "nome": "Razer dois",
+            "cpf": "72100397915",
+            "telefone": "(41) 996073903",
+            "dataAniversario": "12/05/2000",
+            "cidade": "Curitiba",
+            "estado": "PR",
+            "pais": "Brasil",
+            "endereco": "Rua das Jasmins, 1309",
+            "salario": "7777"
+          },
+          "numeroConta": 1671578656785,
+          "limite": 0,
+          "estaAtivo": true,
+          "saldo": 1000,
+          "status": 2,
+          "reponseDate": "2022-12-20T23:24:37.107Z"
+        },
+        {
+          "id": 1671576984846,
+          "usuario": {
+            "email": "dwer@ldld.com",
+            "ultimoNome": "Acordeon",
+            "password": "555555",
+            "nome": "Jeferson",
+            "cpf": "43158781972",
+            "telefone": "(41) 996073903",
+            "dataAniversario": "12/05/2000",
+            "cidade": "Curitiba",
+            "estado": "PR",
+            "pais": "Brasil",
+            "endereco": "Rua das Jasmins, 1309",
+            "salario": "50000"
+          },
+          "numeroConta": 1671576984846,
+          "limite": 0,
+          "estaAtivo": true,
+          "saldo": 1000,
+          "status": 2,
+          "reponseDate": "2022-12-20T22:56:56.254Z"
+        }
+      ]
+    },
+    {
+      "nome": "Michael Scott",
+      "email": "bestboss@bantads.com",
+      "cpf": "12412431412",
+      "telefone": "41994398728",
+      "contas": [],
+      "id": 4
+    },
+    {
+      "nome": "Razer",
+      "email": "razer@bantads.com",
+      "cpf": "22140968044",
+      "telefone": "41976253479",
+      "contas": [],
+      "id": 5
+    },
+    {
+      "nome": "Gerente teste prototipo 2",
+      "email": "gerente@email.com",
+      "cpf": "77777777777",
+      "telefone": "77777777777",
+      "contas": [],
+      "id": 6
+    }
+  ],
+  "statements": {
+    "dateFrom": "1653966000000",
+    "dateTo": "1656644400000",
+    "bankDay": [
+      {
+        "day": "1656644400000",
+        "dayBalance": 999,
+        "transactions": [
+          {
+            "amount": 7000,
+            "type": "transfer",
+            "date": "1656644400000",
+            "numeroConta": "488484",
+            "originAccount": "488400"
+          },
+          {
+            "amount": 700,
+            "type": "deposit",
+            "date": "1656644400000",
+            "numeroConta": "488484"
+          }
+        ]
+      },
+      {
+        "day": "1654052400000",
+        "dayBalance": 999,
+        "transactions": [
+          {
+            "amount": 7000,
+            "type": "transfer",
+            "date": "1654052400000",
+            "numeroConta": "488484",
+            "originAccount": "488400"
+          },
+          {
+            "amount": 700,
+            "type": "deposit",
+            "date": "1654052400000",
+            "numeroConta": "488484"
+          }
+        ]
+      },
+      {
+        "day": "1654138800000",
+        "dayBalance": 999,
+        "transactions": [
+          {
+            "amount": 7000,
+            "type": "transfer",
+            "date": "1654138800000",
+            "numeroConta": "488484",
+            "originAccount": "488400"
+          },
+          {
+            "amount": 700,
+            "type": "deposit",
+            "date": "1654138800000",
+            "numeroConta": "488484"
+          }
+        ]
+      },
+      {
+        "day": "1654225200000",
+        "dayBalance": 999,
+        "transactions": [
+          {
+            "amount": 7000,
+            "type": "transfer",
+            "date": "1654225200000",
+            "numeroConta": "488484",
+            "originAccount": "488400"
+          },
+          {
+            "amount": 700,
+            "type": "deposit",
+            "date": "1654225200000",
+            "numeroConta": "488484"
+          }
+        ]
+      }
+    ]
+  },
+  "resumo": {
+    "saldo": 1000,
+    "limite": 0
+  },
+  "extrato": {
+    "dataInicial": 1653966000000,
+    "dataFinal": 1656644400000,
+    "dias": [
+      {
+        "dia": 1671505200000,
+        "balancoDiario": -874.23,
+        "transacoes": [
+          {
+            "valor": 10,
+            "tipo": "deposit",
+            "data": "2022-12-20T22:05:54.988Z"
+          },
+          {
+            "valor": 280,
+            "tipo": "withdraw",
+            "data": "2022-12-20T22:06:04.681Z"
+          },
+          {
+            "valor": 740,
+            "tipo": "transfer",
+            "data": "2022-12-20T22:06:15.485Z"
+          },
+          {
+            "valor": 0.23,
+            "tipo": "transfer",
+            "data": "2022-12-20T22:06:39.365Z"
+          },
+          {
+            "valor": 100,
+            "tipo": "deposit",
+            "data": "2022-12-20T22:39:43.546Z"
+          },
+          {
+            "valor": 0.5,
+            "tipo": "withdraw",
+            "data": "2022-12-20T22:39:55.250Z"
+          },
+          {
+            "valor": 0.5,
+            "tipo": "transfer",
+            "data": "2022-12-20T22:40:04.884Z"
+          },
+          {
+            "valor": 100,
+            "tipo": "deposit",
+            "data": "2022-12-20T23:28:18.764Z"
+          },
+          {
+            "valor": 50,
+            "tipo": "withdraw",
+            "data": "2022-12-20T23:28:26.524Z"
+          },
+          {
+            "valor": 13,
+            "tipo": "transfer",
+            "data": "2022-12-20T23:28:43.329Z"
+          }
+        ]
+      },
+      {
+        "dia": 1681700400000,
+        "balancoDiario": 90,
+        "transacoes": [
+          {
+            "valor": 100,
+            "tipo": "deposit",
+            "data": "2023-04-17T22:08:18.478Z"
+          },
+          {
+            "valor": 10,
+            "tipo": "withdraw",
+            "data": "2023-04-17T22:08:38.949Z"
+          }
+        ]
+      },
+      {
+        "dia": 1682478000000,
+        "balancoDiario": 50,
+        "transacoes": [
+          {
+            "valor": 50,
+            "tipo": "deposit",
+            "data": "2023-04-27T01:19:13.582Z"
+          }
+        ]
+      },
+      {
+        "dia": 1682564400000,
+        "balancoDiario": 724,
+        "transacoes": [
+          {
+            "valor": 4,
+            "tipo": "deposit",
+            "data": "2023-04-28T00:21:48.736Z"
+          },
+          {
+            "valor": 10,
+            "tipo": "withdraw",
+            "data": "2023-04-28T00:21:55.761Z"
+          },
+          {
+            "valor": 70,
+            "tipo": "transfer",
+            "data": "2023-04-28T00:22:05.467Z"
+          },
+          {
+            "valor": 1000,
+            "tipo": "deposit",
+            "data": "2023-04-28T00:27:36.386Z"
+          },
+          {
+            "valor": 100,
+            "tipo": "withdraw",
+            "data": "2023-04-28T00:27:41.675Z"
+          },
+          {
+            "valor": 100,
+            "tipo": "transfer",
+            "data": "2023-04-28T00:27:50.808Z"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+h5 {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #686868;
+}
+
+.modal-header {
+  background-color: #21487b;
+}
+
+#modalLabel {
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+hr {
+  margin: 0;
+}
+
+.item-lista{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1%;
+}
+
+.item-modal {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+
+}
+
+.item-modal p{
+  margin: 0;
+  color: #686868;
+}
+
+.item-modal div{
+  margin: 0;
+  background-color: rgb(235, 235, 235);
+  color: rgb(49, 47, 47);
+  padding: 10px;
+  border-radius: 3px;
+  top: 0;
+}
+.modal-body {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+}
+
+.endereco{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 5px;
+}
+.item-endereco{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.item-endereco p{
+  margin: 0;
+  color: #686868;
+
+}
+.item-endereco div{
+  margin: 0;
+  background-color: rgb(235, 235, 235);
+  color: rgb(49, 47, 47);
+  padding: 10px;
+  border-radius: 3px;
+  top: 0;
+}
+
+.endereco-body h1{
+ margin: 0;
+ margin-top: 10px;
+ color: #686868;
+ font-size: 18px;
+ font-weight: 600;
+}

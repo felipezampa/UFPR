@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "63e19070a7c7ec009e3252dc"
+  },
+  "nome": "Marielly Gerente",
+  "email": "marigerente@mari.com",
+  "senha": "123456",
+  "perfil": "GERENTE",
+  "_class": "com.bantads.auth.model.Usuario"
+},{
+  "_id": {
+    "$oid": "63e19080a7c7ec009e3252dd"
+  },
+  "nome": "Marielly Admin",
+  "email": "mariadmin@mari.com",
+  "senha": "123456",
+  "perfil": "ADMIN",
+  "_class": "com.bantads.auth.model.Usuario"
+},{
+  "_id": {
+    "$oid": "63e1909fa7c7ec009e3252de"
+  },
+  "nome": "Marielly User",
+  "email": "mariuser@mari.com",
+  "senha": "123456",
+  "perfil": "USER",
+  "_class": "com.bantads.auth.model.Usuario"
+}]

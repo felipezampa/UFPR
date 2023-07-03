@@ -1,0 +1,112 @@
+<div class="bt-container my-2">
+  <div class="row mt-4">
+    <div class="card shadow-lg">
+      <div class="card-header">
+        <h2 class="text-center">BanTads</h2>
+      </div>
+      <div
+        class="card=body px-5 justify-content-center align-items-center d-flex justify-content-between py-3"
+      >
+        <div class="row mt-1">
+          <h2>Bem vindo, Gerente</h2>
+          <h6 class="text-secondary">Lista de clientes</h6>
+        </div>
+        <button
+          mat-raised-button
+          color="primary"
+          class="btn btn-secondary"
+          onclick="history.back()"
+        >
+          Voltar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="card shadow-lg">
+      <div class="card-header">
+        <h2 class="text-center">LISTA DE CLIENTES</h2>
+      </div>
+      <div class="card-body px-5 py-3">
+        <div class="px-5 py-3 col">
+          <mat-form-field *ngIf="pesquisaUsuario" class="pesquisa w-100">
+            <input
+              [(ngModel)]="pesquisaUsuario.nome"
+              #nome="ngModel"
+              type="tel"
+              matInput
+              placeholder="NOME"
+              name="search"
+            />
+            <button
+              (click)="consultarNome(pesquisaUsuario.nome!)"
+              matSuffix
+              mat-button
+            >
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field *ngIf="pesquisaUsuario" class="pesquisa w-100">
+            <input
+              [(ngModel)]="pesquisaUsuario.cpf"
+              mask="000.000.000-99"
+              #cpf="ngModel"
+              type="tel"
+              matInput
+              placeholder="CPF"
+              name="search"
+            />
+            <button (click)="consultarCpf(cpf.value)" matSuffix mat-button>
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="p-3">
+        <table
+          class="table table-striped table-Light table-hover rounded"
+          id="sg-tabela"
+        >
+          <!-- ngIf="empresas.length >= 1 && !isLoading" -->
+          <thead class="table-dark">
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>Salario</th>
+              <th>Saldo em Conta</th>
+              <th>Limite em conta</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let itemConta of filteredAccounts">
+              <td>{{itemConta.nome }}</td>
+              <td>{{itemConta.cpf! | mask : "000.000.000-00" }}</td>
+              <td>{{itemConta.salario! | currency : "R$" : "symbol-narrow" : "1.2-2"}}</td>
+              <td *ngIf="itemConta.conta">
+                {{
+                 itemConta.conta!.saldo
+                    | currency : "R$" : "symbol-narrow" : "1.2-2"
+                }}
+              </td>
+              <td *ngIf="itemConta.conta">
+                {{
+                 itemConta.conta!.limite
+                    | currency : "R$" : "symbol-narrow" : "1.2-2"
+                }}
+              </td>
+              <!-- <td>{{ itemConta.saldo | currency : "R$" : "symbol-narrow" : "1.2-2"}} </td> -->
+              <!-- trocar limit pelo saldo -->
+              <td class="text-center no-print">
+
+                <a type="submit" (click)="verModal(itemConta)">
+                  <i class="fa-solid fa-eye"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

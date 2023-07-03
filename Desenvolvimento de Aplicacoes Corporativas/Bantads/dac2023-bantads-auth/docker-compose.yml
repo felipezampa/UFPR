@@ -1,0 +1,18 @@
+services:
+ mongo:
+  image: mongo
+  ports:
+   - 27017:27017
+ rabbitmq:
+  image: rabbitmq:3-management
+  container_name: rabbitmq_management
+  restart: always
+  ports:
+   - 5672:5672 #conexao
+   - 15672:15672 #adminweb
+  volumes:
+   - ./dados:/var/lib/rabbitmq/
+
+  environment:
+   - RABBITMQ_DEFAULT_USER=guest
+   - RABBITMQ_DEFAULT_PASS=guest

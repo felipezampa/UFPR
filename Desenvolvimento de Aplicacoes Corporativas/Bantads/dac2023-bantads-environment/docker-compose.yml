@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  ds152-bantads-pg:
+    image: postgres:12-alpine3.16
+    restart: always
+    container_name: ds152-bantads-pg
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    networks:
+      - ds152-bantads-network
+    volumes:
+      - ds152_bantads_data:/var/lib/postgresql/data
+  
+  ds152-rabbitmq:
+    image: rabbitmq:3-management-alpine
+    restart: always
+    container_name: ds152-rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - ds152-bantads-network
+       
+networks:
+  ds152-bantads-network:
+    driver: bridge
+    external: true
+
+volumes:
+  ds152_bantads_data:

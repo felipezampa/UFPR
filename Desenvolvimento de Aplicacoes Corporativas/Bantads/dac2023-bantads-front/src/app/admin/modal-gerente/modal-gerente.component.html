@@ -1,0 +1,49 @@
+<div class="modal-header modal-lg d-flex justify-content-center">
+  <h5 class="d-flex justify-content-center" id="modalLabel">VER GERENTE</h5>
+</div>
+<div class="modal-body text-center">
+  <div class="px-3">
+    <div class="row">
+      <div class="col">
+        <h5>Nome</h5>
+        <hr />
+        <h3>{{ gerente.nome | uppercase }}</h3>
+      </div>
+      <div class="col">
+        <h5>Email</h5>
+        <hr />
+        <h3>{{ gerente.email }}</h3>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        <h5>Telefone</h5>
+        <hr />
+        <h3>
+          {{ gerente.phone! | mask : "(00) 0 0000-0000 || (00) 0000-0000" }}
+        </h3>
+      </div>
+      <div class="col">
+        <h5>CPF</h5>
+        <hr />
+        <h3>{{ gerente.cpf! | mask : "000.000.000-00" }}</h3>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <h5>Contas Gerenciadas</h5>
+      <hr />
+      <h3>
+        {{ gerente.numClientes != undefined ? gerente.numClientes : "-" }}
+      </h3>
+    </div>
+  </div>
+</div>
+<div class="modal-footer d-flex justify-content-center">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close()"
+  >
+    Fechar
+  </button>
+</div>

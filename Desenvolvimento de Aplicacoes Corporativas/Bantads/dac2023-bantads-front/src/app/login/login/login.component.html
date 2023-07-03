@@ -1,0 +1,39 @@
+<div class="content">
+  <div class="image-logo-form"></div>
+  <div class="div-form">
+    <form #userAuth="ngForm" class="row d-flex my-4 flex-column justify-content-center align-items-center">
+      <h1 class="text-center">Entrar</h1>
+      <mat-form-field appearance="fill" class="col-8">
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="Insira seu email" required minlength="4" color="primary" name="email" email="true"
+          type="email" [(ngModel)]="usuario.email" #email="ngModel" />
+      </mat-form-field>
+      <div class="alert alert-danger col-8 mx-3" *ngIf="email.errors && (email.dirty || email.touched)">
+        <div [hidden]="!email.errors">Digite um e-mail válido.</div>
+      </div>
+
+      <mat-form-field class="example-full-width" appearance="fill" class="col-8">
+        <mat-label>Senha</mat-label>
+        <input matInput placeholder="Insira sua senha" required minlength="4" color="primary" name="senha"
+          [(ngModel)]="usuario.senha" #senha="ngModel" [type]="hide ? 'password' : 'text'" />
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <div class="alert alert-danger col-8 mx-2" *ngIf="senha.errors && (senha.dirty || senha.touched)">
+        <div [hidden]="!senha.errors">Digite uma senha válida.</div>
+      </div>
+      <div class="col-8 text-center ">
+        <button mat-raised-button class="btn_login mx-6" (click)="login()" [disabled]="!userAuth.form.valid">
+          Login
+        </button>
+        <p mat-button (click)="verModal()" color="primary">
+
+          Novo no Bantads? Realize seu
+          autocadastro
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

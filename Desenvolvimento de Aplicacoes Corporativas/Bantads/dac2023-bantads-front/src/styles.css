@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.font-weight-light{
+  font-weight: lighter;
+
+}
+.fa-trash-can {
+  color: #ff4242;
+  transition: 0.3s;
+}
+
+.fa-trash-can:hover {
+  color: #af0000;
+}
+
+.fa-eye {
+  color: #3c9638;
+  transition: 0.3s;
+}
+
+.fa-eye:hover {
+  color: #1d461b;
+}
+
+.fa-pencil {
+  color: #7e807d;
+  transition: 0.3s;
+}
+
+.fa-pencil:hover {
+  color: #000;
+}
+
+.bt-padding{
+  padding-left: 97px;
+}

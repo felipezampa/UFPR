@@ -1,0 +1,67 @@
+<div class="bt-container my-2">
+    <div class="row mt-4">
+        <div class="card shadow-lg">
+            <div class="card-header" id="bt-blue-bg">
+                <h2 class="text-center">BanTads</h2>
+            </div>
+            <div class="card=body px-5 justify-content-center align-items-center">
+                <div class="row mt-1">
+                    <h2>Bem vindo, Administrador</h2>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col text-center">
+                        <span id="exportar">AÇÕES:</span>
+                        <a type="button" class="sg-action-button" href="/gerentes">Ver Gerentes</a>
+                        <a type="button" class="sg-action-button" href="/admin/listar-cliente">Ver Clientes</a>
+                    </div>
+                    <div class="col text-center">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="card shadow-lg">
+            <div class="card-header" id="bt-blue-bg">
+                <h2 class="text-center">Página Inicial - Gerentes do Bantads</h2>
+            </div>
+            <div class="card-container">
+                <div class="bt-card-body" *ngFor="let gerente of gerentes">
+                    <div class="card">
+                        <div class="card-header text-center p-1" id="bt-black-bg">
+                            <h4>{{gerente.nome}}</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row  text-center">
+                                <div class="col">
+                                    <strong>Quantidade de clientes</strong>
+                                    <p>{{gerente.numClientes != undefined ?
+                                        gerente.numClientes : '0'}}</p>
+                                </div>
+                                <div class="text-center">
+                                    <!-- <div class="row">
+                                        <span class="col-6">
+                                            <strong>Saldos Positivos</strong>
+                                            <p>{{ saldosPositivos(gerente) }}</p>
+                                        </span>
+                                        <span class="col-6">
+                                            <strong>Saldos Negativos</strong>
+                                            <p>{{ saldosNegativos(gerente) }}</p>
+                                        </span>
+                                    </div> -->
+                                </div>
+                                <hr>
+                                <div class="text-center">
+                                    <button class="bt-btn-gerentes " (click)="verModal(gerente)">
+                                        <i class="fa-solid fa-eye bt-eye"></i> Ver Gerente
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

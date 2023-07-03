@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+.bt-label {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #686868;
+    margin-right: auto;
+}
+
+.modal-header {
+    background-color: #21487B;
+}
+
+#modalLabel {
+    color: white;
+    font-weight: 700;   
+    font-size: 1.3rem;
+}
+
+.bt-input {
+    border: none;
+    font-size: 1.0rem;
+    font-weight: normal;
+    width: 100%;    
+    transform: scaleX(1);
+    border-bottom: 2px solid #21487B;
+    outline: none;
+    margin-bottom: 10px;
+    transition: 0.6s;
+}
+
+.bt-input::placeholder {
+    opacity: 0.5; 
+}
+
+.alert {
+    height: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-primary, .btn-outline-dark {
+    font-size: 1.2rem;
+}
+
+.bt-input[type=text]:focus,
+.bt-input[type=text]:active
+ {
+    transform: scaleX(1);
+    border-bottom: 2px solid #9CD485;
+    outline: none;
+}
+.bt-input:read-only {
+    background-color: #e9e9e9;
+    border-bottom: 2px solid #9CD485;
+}

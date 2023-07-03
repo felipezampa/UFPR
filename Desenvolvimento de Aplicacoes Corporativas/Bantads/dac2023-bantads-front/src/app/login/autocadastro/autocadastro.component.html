@@ -1,0 +1,154 @@
+<div>
+  <div class="modal-header modal-lg d-flex justify-content-center">
+    <h5 id="modalLabel">Autocadastro</h5>
+  </div>
+
+  <div class="modal-body text-center">
+    <form #cadastroUsuario="ngForm" class="row d-flex my-4 flex-column justify-content-center align-items-center">
+
+      <div class="row mt-2">
+        <div class="col-2">
+          <label for="nome" class="bt-label">Nome:</label>
+        </div>
+        <div class="col">
+          <input type="text" maxlength="50" placeholder="Digite seu nome" minlength="1" name="nome" id="nome"
+            [(ngModel)]="usuario.nome" #nome="ngModel" class="bt-input" required placeholder="Nome completo *">
+          <div class="alert alert-danger" *ngIf="nome.errors && (nome.dirty || nome.touched)">
+            <div [hidden]="!nome.errors">Digite seu nome.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-2">
+          <label for="email" class="bt-label">E-mail:</label>
+        </div>
+        <div class="col">
+          <input type="text" maxlength="50" [(ngModel)]="usuario.email" name="email" #email="ngModel" id="email"
+            class="bt-input" required placeholder="E-mail *">
+          <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+            <div [hidden]="!email.errors"> Digite seu e-mail.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-2">
+          <label for="cpf" class="bt-label">CPF:</label>
+        </div>
+        <div class="col">
+          <input type="text" maxlength="14" required minlength="11" name="cpf" id="cpf" [(ngModel)]="usuario.cpf"
+            #cpf="ngModel" mask="000.000.000-00" class="bt-input" required placeholder="CPF *">
+          <div class="alert alert-danger" *ngIf="cpf.errors && (cpf.dirty || cpf.touched)">
+            <div [hidden]="!cpf.errors">Digite seu CPF.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-2">
+          <label for="endereco" class="bt-label">Endereço:</label>
+        </div>
+        <div class="col">
+          <input type="text" maxlength="60" [(ngModel)]="usuario.endereco" name="endereco" #endereco="ngModel"
+            id="endereco" class="bt-input" required placeholder="Endereço *">
+          <div *ngIf="endereco.errors && (endereco.dirty || endereco.touched)" class="alert alert-danger">
+            <div [hidden]="!endereco.errors"> Digite seu endereço.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-2">
+          <label for="cidade" class="bt-label">Cidade:</label>
+        </div>
+        <div class="col">
+          <input type="text" maxlength="30" [(ngModel)]="usuario.cidade" name="cidade" #cidade="ngModel" id="cidade"
+            class="bt-input" required placeholder="Cidade *">
+          <div *ngIf="cidade.errors && (cidade.dirty || cidade.touched)" class="alert alert-danger">
+            <div [hidden]="!cidade.errors"> Digite sua cidade.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-2">
+          <label for="estado" class="bt-label">Estado:</label>
+        </div>
+        <div class="col">
+          <input type="text" maxlength="30" [(ngModel)]="usuario.estado" name="estado" #estado="ngModel" id="estado"
+            class="bt-input" required placeholder="Estado *">
+          <div *ngIf="estado.errors && (estado.dirty || estado.touched)" class="alert alert-danger">
+            <div [hidden]="!cidade.errors"> Digite seu estado.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-2">
+          <label for="bairro" class="bt-label">Bairro:</label>
+        </div>
+        <div class="col">
+          <input type="text" maxlength="30" [(ngModel)]="usuario.bairro" name="bairro" #bairro="ngModel" id="bairro"
+            class="bt-input" required placeholder="Bairro *">
+          <div *ngIf="bairro.errors && (bairro.dirty || bairro.touched)" class="alert alert-danger">
+            <div [hidden]="!bairro.errors"> Digite seu bairro.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-2">
+          <label for="cep" class="bt-label">CEP:</label>
+        </div>
+        <div class="col">
+          <input type="text" maxlength="10" [(ngModel)]="usuario.cep" name="cep" #cep="ngModel" id="cep"
+            class="bt-input" required placeholder="CEP *" mask="00000-000">
+          <div *ngIf="cep.errors && (cep.dirty || cep.touched)" class="alert alert-danger">
+            <div [hidden]="!cep.errors"> Digite seu CEP.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-2">
+          <label for="telefone" class="bt-label">Telefone:</label>
+        </div>
+        <div class="col">
+          <input type="text" maxlength="50" [(ngModel)]="usuario.telefone" name="telefone" #telefone="ngModel"
+            id="telefone" class="bt-input" required placeholder="Telefone *" mask="(00) 0 0000-0000||(00) 0000-0000">
+          <div *ngIf="telefone.errors && (telefone.dirty || telefone.touched)" class="alert alert-danger">
+            <div [hidden]="!telefone.errors"> Digite seu telefone.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-2">
+          <label for="salario" class="bt-label">Salário:</label>
+        </div>
+        <div class="col">
+          <input type="text" name="salario" maxlength="30" [(ngModel)]="usuario.salario" name="salario"
+            #salario="ngModel" id="salario" class="bt-input" required placeholder="Salário mensal *" currencyMask
+            matInput #amount [options]="{
+            prefix: 'R$ ',
+            thousands: '.',
+            decimal: ',',
+            align: 'left'
+          }">
+          <div *ngIf="salario.errors && (salario.dirty || salario.touched)" class="alert alert-danger">
+            <div [hidden]="!salario.errors"> Digite seu salário.</div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-footer justify-content-center align-items-center">
+  <button type="submit" class="btn btn-primary mx-2" (click)="cadastrarClick()"
+  [disabled]="!cadastroUsuario.form.valid">
+    Cadastrar-se
+  </button>
+  <button type="button" class="btn btn-outline-dark" (click)="fecharModal()">Voltar ao login</button>
+</div>

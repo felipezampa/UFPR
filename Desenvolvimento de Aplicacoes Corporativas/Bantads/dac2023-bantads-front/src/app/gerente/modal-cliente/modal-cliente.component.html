@@ -1,0 +1,94 @@
+<div class="modal-header modal-lg d-flex justify-content-center">
+  <h2 class="d-flex justify-content-center" id="modalLabel">CLIENTE</h2>
+</div>
+<div class="modal-body">
+  <div>
+    <h1>{{ itemConta.nome }}</h1>
+  </div>
+  <div class="item-lista">
+    <div class="item-modal">
+      <p>CPF</p>
+      <div>{{ itemConta.cpf | cpfCnpj }}</div>
+    </div>
+    <div class="item-modal" *ngIf="itemConta.conta">
+      <p>Nº da conta</p>
+      <div>{{ itemConta.conta!.numero }}</div>
+    </div>
+    <!-- <div class="item-modal">
+      <p> Contato</p>
+      <div>{{ itemConta.telefone }}</div>
+    </div> -->
+    <div class="item-modal" *ngIf="itemConta.conta">
+      <p>Saldo</p>
+      <div>
+        {{
+          itemConta.conta!.saldo | currency : "R$ " : "symbol-narrow" : "1.2-2"
+        }}
+      </div>
+    </div>
+    <!-- <div class="item-modal">
+      <p>E-mail</p>
+      <div>{{ itemConta.email }}</div>
+    </div> -->
+    <div class="item-modal" *ngIf="itemConta.conta">
+      <p>Limite</p>
+      <div>
+        {{
+          itemConta.conta!.limite | currency : "R$ " : "symbol-narrow" : "1.2-2"
+        }}
+      </div>
+    </div>
+    <div class="item-modal">
+      <p>Salario</p>
+      <div>
+        {{ itemConta.salario | currency : "R$ " : "symbol-narrow" : "1.2-2" }}
+      </div>
+    </div>
+    <div class="item-modal">
+      <p>Número do gerente</p>
+      <div>
+        {{ itemConta.gerente.id }}
+      </div>
+    </div>
+    <div class="item-modal">
+      <p>Nome do gerente</p>
+      <div>
+        {{ itemConta.gerente.nome }}
+      </div>
+    </div>
+    <div class="item-modal">
+      <p>Está ativo</p>
+      <div>{{ itemConta.aprovado ? "Sim" : "Não" }}</div>
+    </div>
+  </div>
+  <!-- <div class="endereco-body">
+    <h1>Endereço</h1>
+    <div class="endereco">
+      <div class="item-endereco">
+        <p>Rua</p>
+        <div> {{ itemConta.usuario.endereco }}</div>
+      </div>
+      <div class="item-endereco">
+        <p>Cidade</p>
+        <div>{{ itemConta.usuario.cidade }}</div>
+      </div>
+      <div class="item-endereco text-center">
+        <p>UF</p>
+        <div> {{ itemConta.usuario.estado }}</div>
+      </div>
+      <div class="item-endereco">
+        <p>País</p>
+        <div> {{ itemConta.usuario.pais }}</div>
+      </div>
+    </div>
+  </div> -->
+</div>
+<div class="modal-footer d-flex">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close()"
+  >
+    Fechar
+  </button>
+</div>

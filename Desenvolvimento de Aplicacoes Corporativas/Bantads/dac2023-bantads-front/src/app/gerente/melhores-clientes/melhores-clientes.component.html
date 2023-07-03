@@ -1,0 +1,69 @@
+<div class="bt-container my-2">
+  <div class="row mt-4">
+    <div class="card shadow-lg">
+      <div class="card-header">
+        <h2 class="text-center">BanTads</h2>
+      </div>
+      <div
+        class="card=body px-5 justify-content-center align-items-center d-flex justify-content-between py-3"
+      >
+        <div class="row mt-1">
+          <h2>Bem vindo, Gerente</h2>
+          <h6 class="text-secondary">Lista dos seus 3 melhores clientes</h6>
+        </div>
+        <button
+          mat-raised-button
+          color="primary"
+          class="btn btn-secondary"
+          onclick="history.back()"
+        >
+          Voltar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-4">
+    <div class="card shadow-lg">
+      <div class="card-header">
+        <h2 class="text-center">TOP 3 CLIENTES</h2>
+      </div>
+      <div class="card-body px-5 py-3 table-responsive">
+        <table
+          class="table table-striped table-Light mb-3 table-responsive table-hover rounded"
+          id="sg-tabela"
+        >
+          <!-- ngIf="empresas.length >= 1 && !isLoading" -->
+          <thead class="table-dark">
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>Email</th>
+              <th>Saldo em conta</th>
+              <th>Limite em conta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let conta of contas">
+              <td>{{ conta.nome }}</td>
+              <td>{{ conta.cpf! | mask : "000.000.000-00" }}</td>
+              <td>{{ conta.email! }}</td>
+              <td *ngIf="conta.conta">
+                {{
+                  conta.conta!.saldo
+                    | currency : "R$" : "symbol-narrow" : "1.2-2"
+                }}
+              </td>
+              <td *ngIf="conta.conta">
+                {{
+                  conta.conta!.limite
+                    | currency : "R$" : "symbol-narrow" : "1.2-2"
+                }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

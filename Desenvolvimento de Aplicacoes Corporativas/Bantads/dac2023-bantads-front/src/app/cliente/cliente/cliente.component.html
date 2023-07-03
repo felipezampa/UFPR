@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="bt-container my-2">
+    <div class="row mt-4">
+      <div class="card shadow-lg">
+        <div class="card-header">
+          <h2 class="text-center">BanTads</h2>
+        </div>
+        <div class="card=body px-5 justify-content-center align-items-center">
+          <div class="row mt-3 justify-content-space-between">
+            <div class="col">
+              <h2>Bem vindo, Cliente</h2>
+              <p>Número de conta: {{ resumo.numero }}</p>
+            </div>
+            <div class="col-3">
+              <div class="d-flex align-items-center justify-content-end">
+                <div class="mr-4 button-edit">
+                  <a
+                    href="/cliente/editar/"
+                    mat-button
+                    class="text-light bg-info"
+                    >Editar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+          <div class="row mt-4 d-flex justify-content-around card-pai">
+            <div class="col-5 card shadow-lg" [ngClass]="getColor()">
+              <div class="card-header">
+                <h2 class="text-center">Seu saldo</h2>
+              </div>
+              <div class="row m-2 d-flex justify-content-around">
+                <div>
+                  <mat-card-title class="text-light">{{
+                    resumo.saldo.toFixed(2)
+                      | currency : "R$" : "symbol-narrow" : "1.2-2"
+                  }}</mat-card-title>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 card shadow-lg">
+              <div class="card-header">
+                <h2 class="text-center">Seu limite</h2>
+              </div>
+              <div class="row m-2 d-flex justify-content-around">
+                <mat-card-title>{{
+                  resumo.limite.toFixed(2)
+                    | currency : "R$" : "symbol-narrow" : "1.2-2"
+                }}</mat-card-title>
+
+                <mat-card-content>
+                  <p class="paragraph">
+                    Fale com seu gerente: gerente@email.com
+                  </p>
+                </mat-card-content>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-between mt-4">
+      <div class="col-3 d-flex align-items-center justify-content-center">
+        <a
+          href="/cliente/deposito"
+          title="Depositar"
+          alt="Depositar"
+          mat-button
+          class="text-light bg-success"
+          >Depositar</a
+        >
+      </div>
+
+      <div class="col-3 d-flex align-items-center justify-content-center">
+        <a href="/cliente/saque" mat-button class="text-light bg-danger"
+          >Sacar</a
+        >
+      </div>
+
+      <div class="col-3 d-flex align-items-center justify-content-center">
+        <a
+          href="/cliente/transferencia"
+          mat-button
+          class="text-light bg-warning"
+          >Transferir</a
+        >
+      </div>
+
+      <div class="col-3 d-flex align-items-center justify-content-center">
+        <a href="/cliente/extrato" mat-button class="text-light bg-info"
+          >Extrato</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

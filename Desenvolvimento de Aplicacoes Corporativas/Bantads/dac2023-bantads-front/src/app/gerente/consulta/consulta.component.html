@@ -1,0 +1,178 @@
+<div>
+  <div class="bt-container my-2">
+    <div class="row mt-4">
+      <div class="card shadow-lg">
+        <div class="card-header">
+          <h2 class="text-center">BanTads</h2>
+        </div>
+        <div
+          class="card=body px-5 justify-content-center align-items-center d-flex justify-content-between py-3"
+        >
+          <div class="row mt-1">
+            <h2>Bem vindo, Gerente</h2>
+          </div>
+          <button
+            mat-raised-button
+            color="primary"
+            class="btn btn-secondary"
+            onclick="history.back()"
+          >
+            Voltar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-4">
+      <div class="card shadow-lg">
+        <div class="card-header">
+          <h2 class="text-center">CONSULTA DE CLIENTE</h2>
+        </div>
+        <div class="d-flex row">
+          <div class="px-5 py-3 table-responsive col">
+            <mat-form-field *ngIf="pesquisaUsuario" class="pesquisa w-100">
+              <input
+                [(ngModel)]="pesquisaUsuario.cpf"
+                mask="000.000.000-99"
+                #cpf="ngModel"
+                type="tel"
+                matInput
+                placeholder="CPF"
+                name="search"
+              />
+              <button
+                (click)="consultarCpf(cpf.value); mostrarItens = true"
+                matSuffix
+                mat-button
+              >
+                <mat-icon>search</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div *ngIf="mostrarItens && conta" class="m-4 row">
+          <div class="row">
+            <mat-card class="row m-4">
+              <div class="row">
+                <div class="col-6">
+                  Nome:
+                  <div class="item-lista">
+                    <p>{{ conta?.nome }}</p>
+                  </div>
+                </div>
+                <div class="col-6" *ngIf="conta.conta">
+                  Conta Número:
+                  <div class="item-lista">
+                    <p>{{ conta.conta!.numero }}</p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  CPF:
+                  <div class="item-lista">
+                    <p>{{ conta?.cpf | cpfCnpj }}</p>
+                  </div>
+                </div>
+                <div class="col-6" *ngIf="conta.conta">
+                  Saldo:
+                  <div class="item-lista">
+                    <p>
+                      {{
+                        conta.conta.saldo
+                          | currency : "R$" : "symbol-narrow" : "1.2-2"
+                      }}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-6" *ngIf="conta.conta">
+                  Limite:
+                  <div class="item-lista">
+                    <p>
+                      {{
+                        conta.conta.limite
+                          | currency : "R$" : "symbol-narrow" : "1.2-2"
+                      }}
+                    </p>
+                  </div>
+                  <div class="col-6" *ngIf="conta.conta">
+                    Gerente responsável:
+                    <div class="item-lista">
+                      <p>
+                        {{
+                          conta.conta.idGerente
+
+                        }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  Telefone:
+                  <div class="item-lista">
+                    <p>{{ conta?.telefone }}</p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  Salario:
+                  <div class="item-lista">
+                    <p>
+                      {{
+                        conta?.salario
+                          | currency : "R$" : "symbol-narrow" : "1.2-2"
+                      }}
+                    </p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  E-mail:
+                  <div class="item-lista">
+                    <p>{{ conta?.email }}</p>
+                  </div>
+                </div>
+                <!-- <div class="col-6">
+                  Usuario Ativo:
+                  <div class="item-lista">
+                    <p>{{ conta?.estaAtivo }}</p>
+                  </div>
+                </div>
+                <div class="col-12">
+                  Endereço:
+                  <div class="item-lista">
+                    <p>{{ conta?.endereco }}</p>
+                  </div>
+                </div>
+                <div class="col-12">
+                  Cidade:
+                  <div class="item-lista">
+                    <p>{{ conta?.cidade }}</p>
+                  </div>
+                </div>
+                <div class="col-12">
+                  Estado:
+                  <div class="item-lista">
+                    <p>{{ conta?.estado }}</p>
+                  </div>
+                </div>
+                <div class="col-12">
+                  Pais:
+                  <div class="item-lista">
+                    <p>{{ conta?.pais }}</p>
+                  </div>
+                </div> -->
+              </div>
+            </mat-card>
+          </div>
+
+          <div
+            *ngIf="conta != undefined && !conta"
+            class="alert alert-danger justify-content-center"
+            role="alert"
+          >
+            Usuário não encontrado, por favor tente novamente!!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

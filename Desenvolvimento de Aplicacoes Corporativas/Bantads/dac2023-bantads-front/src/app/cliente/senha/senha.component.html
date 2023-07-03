@@ -1,0 +1,118 @@
+<div class="bt-container my-2 mb-6">
+  <div class="row my-4">
+    <div class="card shadow-lg">
+      <div class="card-header p-3">
+        <div>
+          <h2 class="text-center">EDITAR DADOS</h2>
+        </div>
+      </div>
+      <mat-card class="mt-4 p-4">
+        <form
+          #senhaForm="ngForm"
+          class="row d-flex flex-column justify-content-center align-items-center"
+        >
+          <mat-form-field
+            class="example-full-width"
+            appearance="fill"
+            class="col-8"
+          >
+            <mat-label>Digite sua senha atual</mat-label>
+            <input
+              matInput
+              placeholder="Insira sua senha"
+              required
+              minlength="4"
+              color="primary"
+              name="senha"
+              #senha
+              [type]="hide ? 'password' : 'text'"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <!-- <div class="alert alert-danger col-8 mx-2" *ngIf="senha.errors && (senha.dirty || senha.touched)">
+          <div [hidden]="!senha.errors">Digite uma senha válida.</div>
+        </div> -->
+
+          <mat-form-field
+            class="example-full-width"
+            appearance="fill"
+            class="col-8"
+          >
+            <mat-label>Digite sua nova senha</mat-label>
+            <input
+              matInput
+              placeholder="Insira sua senha"
+              required
+              minlength="4"
+              color=""
+              name="senha"
+              #senhaNova
+              [type]="hide2 ? 'password' : 'teprimaryxt'"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide2 = !hide2"
+              [attr.aria-label]="'hide password'"
+              [attr.aria-pressed]="hide2"
+            >
+              <mat-icon>{{ hide2 ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <!-- <div class="alert alert-danger col-8 mx-2" *ngIf="senha.errors && (senha.dirty || senha.touched)">
+          <div [hidden]="!senha.errors">Digite sua nova senha</div>
+        </div> -->
+
+          <mat-form-field
+            class="example-full-width"
+            appearance="fill"
+            class="col-8"
+          >
+            <mat-label>Repita sua nova senha</mat-label>
+            <input
+              matInput
+              placeholder="Insira sua senha"
+              required
+              minlength="4"
+              color="primary"
+              name="senha"
+              #senhaNovaConfirmacao
+              [type]="hide3 ? 'password' : 'text'"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide3 = !hide3"
+              [attr.aria-label]="'hide password'"
+              [attr.aria-pressed]="hide3"
+            >
+              <mat-icon>{{ hide3 ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <button
+            mat-raised-button
+            color="primary"
+            class="col-6 mx-3"
+            (click)="editarSenha()"
+          >
+            Editar
+          </button>
+        </form>
+      </mat-card>
+      <div>
+        <button mat-button class="mt-2 button-light" onclick="history.back()">
+          Voltar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
